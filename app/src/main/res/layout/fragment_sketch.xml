@@ -5,8 +5,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.lacklab.app.sketchapp.ui.custom.SketchImageView
-            android:id="@+id/sketch_image_view_paint"
+        <com.lacklab.app.sketchapp.ui.custom.SketchView
+            android:id="@+id/sketch_view_paint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
