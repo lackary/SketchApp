@@ -12,6 +12,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.lacklab.app.sketchapp.R
 import timber.log.Timber
+import com.lacklab.app.sketchapp.ui.custom.SingletonTest
 
 class SketchView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyle: Int = 0
@@ -50,7 +51,7 @@ class SketchView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-//        Timber.d("onDraw")
+        Timber.d("onDraw")
         drawPath(canvas)
     }
 
@@ -74,8 +75,9 @@ class SketchView @JvmOverloads constructor(
 
             }
         }
-
-        return true
+//        return true
+        // if fragment have View.OnClickListener, it will be pass to onClick()
+        return super.onTouchEvent(event)
     }
 
     private fun initPaintPen() : Paint {
@@ -85,7 +87,7 @@ class SketchView @JvmOverloads constructor(
             isAntiAlias = true
             isDither = true
             style = Paint.Style.STROKE
-            strokeJoin = Paint.Join.MITER
+            strokeJoin = Paint.Join.ROUND
             strokeCap = Paint.Cap.ROUND
             color = ContextCompat.getColor(context, R.color.white)
         }
