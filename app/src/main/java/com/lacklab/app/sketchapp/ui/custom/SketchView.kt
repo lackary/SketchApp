@@ -49,7 +49,7 @@ class SketchView @JvmOverloads constructor(
         Timber.d("onLayout")
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         Timber.d("onDraw")
         drawPath(canvas)

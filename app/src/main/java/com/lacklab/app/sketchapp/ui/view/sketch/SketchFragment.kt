@@ -35,17 +35,17 @@ class SketchFragment :
             sketchView = sketchViewPaint
             val message = Message()
 
-//            sketchImageView.setOnTouchListener { v, event ->
-//                Timber.d("onTouch")
-//                when(event.action) {
-//                    MotionEvent.ACTION_DOWN -> {
-//                    }
-//                    MotionEvent.ACTION_MOVE -> {
-//                    }
-//                    MotionEvent.ACTION_UP ->{}
-//                }
-//                false
-//            }
+            sketchView.setOnTouchListener { v, event ->
+                Timber.d("onTouch")
+                when(event.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                    }
+                    MotionEvent.ACTION_MOVE -> {
+                    }
+                    MotionEvent.ACTION_UP ->{}
+                }
+                false
+            }
         }
     }
 

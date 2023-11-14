@@ -10,13 +10,17 @@ import timber.log.Timber
 
 abstract class BaseActivity<DB: ViewDataBinding, VM: BaseViewModel> : AppCompatActivity() {
 
-    private lateinit var binding: DB
-    private lateinit var viewModel: VM
+    private lateinit var _binding: DB
+    val binding: DB
+        get() = _binding
+    private lateinit var _viewModel: VM
+    val viewModel: VM
+        get() = _viewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, layoutId)
-        viewModel = getVM()
+        _binding = DataBindingUtil.setContentView(this, layoutId)
+        _viewModel = getVM()
         bindVM(binding, viewModel)
     }
 
